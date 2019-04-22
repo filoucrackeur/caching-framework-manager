@@ -11,6 +11,10 @@ class TreeUtility
      */
     public static function fromArray(array $array): string
     {
+        if (empty($array)) {
+            return '';
+        }
+
         $output = '<ul class="list-tree text-monospace">';
 
         foreach ($array as $key => $value) {

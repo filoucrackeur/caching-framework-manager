@@ -14,7 +14,7 @@ class Session extends Enumeration
     /**
      * @return bool
      */
-    public function isFrontent(): bool
+    public function isFrontend(): bool
     {
         return $this->equals(self::FE);
     }

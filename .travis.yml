@@ -1,25 +1,51 @@
 language: php
 
-php:
-  - 7.2
-  - 7.3
+matrix:
+  fast_finish: true
+  include:
+    - env: TYPO3_VERSION=^9.5 COVERAGE=1
+      php: 7.2
+    - env: TYPO3_VERSION=^9.5 COVERAGE=1
+      php: 7.3
 
-sudo: true
+
+sudo: false
+
+addons:
+  apt:
+    packages:
+      - parallel
 
 cache:
   directories:
     - $HOME/.composer/cache
 
+before_install:
+  - composer self-update
+  - composer --version
+
 before_script:
-  - Build/Scripts/runTests.sh -s composerInstall -p $TRAVIS_PHP_VERSION
+  - composer require typo3/minimal=$TYPO3_VERSION
+  - git checkout composer.json
+  - export TYPO3_PATH_WEB=$PWD/.Build/Web
+  - mkdir -p build/logs
 
 script:
   - >
-    echo "Running composer validate"
-    Build/Scripts/runTests.sh -s composerValidate -p $TRAVIS_PHP_VERSION
+    if [[ "$COVERAGE" == "0" ]]; then
+      echo;
+      echo "Running unit tests";
+      .Build/bin/phpunit --configuration phpunit.xml.dist --colors Tests/Unit/
+    fi
   - >
-    echo "Running unit tests";
-    Build/Scripts/runTests.sh -s unit -p $TRAVIS_PHP_VERSION
+    if [[ "$COVERAGE" == "1" ]]; then
+      echo;
+      echo "Running unit tests with coverage";
+      .Build/bin/phpunit --configuration phpunit.xml.dist --colors --coverage-text --coverage-clover build/logs/clover.xml Tests/Unit/
+    fi
+
+after_script:
   - >
-    echo "Running php lint";
-    Build/Scripts/runTests.sh -s lint -p $TRAVIS_PHP_VERSION
+    if [[ "$COVERAGE" == "1" ]]; then
+      travis_retry php .Build/bin/coveralls -v
+    fi

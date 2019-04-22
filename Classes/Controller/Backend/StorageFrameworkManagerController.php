@@ -81,6 +81,7 @@ class StorageFrameworkManagerController extends AbstractController
      * @param ServerRequestInterface $request
      * @return ResponseInterface
      * @throws \TYPO3\CMS\Core\Cache\Exception\NoSuchCacheException
+     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\InvalidExtensionNameException
      */
     public function core(ServerRequestInterface $request): ResponseInterface
     {
@@ -102,6 +103,7 @@ class StorageFrameworkManagerController extends AbstractController
      * @param ServerRequestInterface $request
      * @return ResponseInterface
      * @throws \TYPO3\CMS\Core\Cache\Exception\NoSuchCacheException
+     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\InvalidExtensionNameException
      */
     public function extensions(ServerRequestInterface $request): ResponseInterface
     {
@@ -115,37 +117,6 @@ class StorageFrameworkManagerController extends AbstractController
         return new JsonResponse([
             'success' => true,
             'html' => $view->render(),
-        ]);
-    }
-
-
-    /**
-     * @param ServerRequestInterface $request
-     * @return ResponseInterface
-     * @throws \TYPO3\CMS\Core\Cache\Exception\NoSuchCacheException
-     */
-    public function backend(ServerRequestInterface $request): ResponseInterface
-    {
-
-        $backend = GeneralUtility::makeInstance(CacheManagerService::class)
-            ->getSessionBackendByIdentifier('BE');
-//            ->getCacheBackendByIdentifier('cache_pages');
-
-        try {
-            $backend->getBackend()->validateConfiguration();
-        } catch (\Exception $e) {
-            var_dump($e);
-        }
-        die;
-
-        return new JsonResponse([
-            'success' => true,
-            'backend' => [
-                'identifier' => $backend->getIdentifier(),
-                'type' => $backend->getType(),
-                'status' => $backend->getStatus(),
-                'configuration' => $backend->getConfiguration(),
-            ],
         ]);
     }
 

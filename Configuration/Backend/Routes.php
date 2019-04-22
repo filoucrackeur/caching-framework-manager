@@ -20,8 +20,4 @@ return [
         'path' => '/storage-framework-manager/show',
         'target' => Backend\StorageFrameworkManagerController::class . '::show'
     ],
-    'backend' => [
-        'path' => '/storage-framework-manager/backend',
-        'target' => Backend\StorageFrameworkManagerController::class . '::backend'
-    ],
 ];

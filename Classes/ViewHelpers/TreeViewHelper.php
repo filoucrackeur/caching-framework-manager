@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace Filoucrackeur\StorageFrameworkManager\ViewHelpers;
 
-use Exception;
 use Filoucrackeur\StorageFrameworkManager\Utility\TreeUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
@@ -32,7 +31,6 @@ class TreeViewHelper extends AbstractViewHelper
 
     /**
      * @return string
-     * @throws Exception
      */
     public function render(): string
     {
