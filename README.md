@@ -25,7 +25,7 @@ Menu
 -----
 
 You can overview your caching storage configuration
-![](./Documentation/Images/capture_caching.png =100x)
+![](./Documentation/Images/capture_caching.png)
 -----
 You can overview your session storage configuration 
 ![](./Documentation/Images/capture_session.png)
