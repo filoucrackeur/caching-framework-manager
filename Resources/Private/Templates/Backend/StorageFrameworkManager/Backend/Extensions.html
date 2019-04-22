@@ -1,0 +1,19 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers">
+
+<f:layout name="Default"/>
+
+<f:section name="headline">
+    <h1>
+        <core:icon alternativeMarkupIdentifier="inline"
+                   identifier="tx-storage-framework-manager-extensions"
+                   size="large"/>
+        Community Extensions <span class="badge">{backends -> f:count()}</span>
+    </h1>
+</f:section>
+
+<f:section name="content">
+    <f:render arguments="{backends: backends, type: 'cache'}" partial="Backend" section="List"/>
+</f:section>
+</html>

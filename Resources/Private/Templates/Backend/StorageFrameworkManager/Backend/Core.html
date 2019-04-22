@@ -1,0 +1,24 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers">
+
+<f:layout name="Default"/>
+
+<f:section name="headline">
+    <h1>
+        <core:icon alternativeMarkupIdentifier="inline"
+                   identifier="tx-storage-framework-manager-core"
+                   size="large"/>
+        TYPO3 Core cache <span class="badge">{backends -> f:count()}</span>
+    </h1>
+</f:section>
+
+<f:section name="content">
+    <p class="lead">
+        The caching framework exists to help speeding up TYPO3 sites, especially heavily loaded ones. It is possible to
+        move all caches to a dedicated cache server with specialized cache systems like the Redis key-value store (a so
+        called NoSQL database).
+    </p>
+    <f:render arguments="{backends: backends, type: 'cache'}" partial="Backend" section="List"/>
+</f:section>
+</html>

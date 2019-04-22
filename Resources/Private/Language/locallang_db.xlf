@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2014-06-02T11:48:25Z" product-name="storage-framework-manager">
+        <header/>
+        <body>
+            <trans-unit id="storage-framework-manager">
+                <source>Storage framework manager</source>
+            </trans-unit>
+            <trans-unit id="check_configuration">
+                <source>Check configuration</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

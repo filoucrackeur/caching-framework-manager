@@ -1,0 +1,73 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:b="http://typo3.org/ns/Filoucrackeur/StorageFrameworkManager/Viewhelpers"
+      xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers">
+
+<f:section name="List">
+    <div aria-multiselectable="true" class="panel-group" role="tablist">
+        <f:if condition="!{backends}">
+            <div class="typo3-message alert alert-info text-center">
+                <div class="message-body">No backend found</div>
+            </div>
+        </f:if>
+        <f:for as="backend" each="{backends}" key="identifier">
+            <f:variable name="configuration"><b:configuration identifier="{backend}" type="{type}"/></f:variable>
+            <f:render arguments="{_all}" section="Item"/>
+        </f:for>
+    </div>
+</f:section>
+
+<f:section name="Item">
+    <div class="panel {f:if(condition: '{configuration.backend} == \'TYPO3\CMS\Core\Cache\Backend\NullBackend\'', then: 'panel-warning', else: 'panel-success')}">
+        <div class="panel-heading" id="heading-backend" role="tab">
+            <h3 class="panel-title">
+                <a aria-controls="collapse-backend-{identifier}"
+                   aria-expanded="false"
+                   class="collapsed backend-item"
+                   data-backend-identifier="{identifier}"
+                   data-backend-type="{type}"
+                   data-parent="#accordion"
+                   data-toggle="collapse"
+                   href="#collapse-backend-{identifier}"
+                   role="button">
+                    <span class="caret"></span>
+
+                    <strong>{backend}</strong>
+                </a>
+            </h3>
+        </div>
+        <div aria-expanded="false"
+             aria-labelledby="heading-backend"
+             class="panel-collapse search-item collapse"
+             id="collapse-backend-{identifier}"
+             role="tabpanel"
+             style="height: 0px;">
+            <div class="panel-body">
+                <f:if condition="{configuration.backend} == 'TYPO3\CMS\Core\Cache\Backend\NullBackend'">
+                    <div class="alert alert-warning">
+                        <i class="fa fa-warning"></i> Do not use this in production, it will strongly slow down the system!
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </f:if>
+                <div class="row">
+                    <div class="col-lg-10">
+                        <h4>Configuration</h4>
+                        <b:tree value="{configuration}"/>
+                    </div>
+                    <div class="col-lg-2">
+                        <f:if condition="{configuration.groups -> f:count()}">
+                            <h4>Groups</h4>
+                            <f:for as="group" each="{configuration.groups}">
+                                <span class="badge badge-info text-right">{group}</span>
+                            </f:for>
+                        </f:if>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</f:section>
+
+</html>

@@ -1,0 +1,28 @@
+<html data-namespace-typo3-fluid="true"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="https://xsd.helhum.io/ns/typo3/cms-fluid/master/ViewHelpers">
+
+<f:layout name="Default"/>
+
+<f:section name="headline">
+    <h1>
+        <core:icon alternativeMarkupIdentifier="inline"
+                   identifier="tx-storage-framework-manager-session"
+                   size="large"/>
+        TYPO3 Sessions Caches <span class="badge">{backends -> f:count()}</span>
+    </h1>
+</f:section>
+
+<f:section name="content">
+    <p class="lead">
+        Previously, all sessions were stored in the database in the tables <code>fe_sessions</code> and <code>be_sessions</code>
+        respectively.
+        The Core ships two session backends by default:<br/>
+        - Database storage</br>
+        - Redis storage</br>
+        <br>
+        By default user sessions are still stored in the database using the database storage backend.
+    </p>
+    <f:render arguments="{backends: backends, type: 'session'}" partial="Backend" section="List"/>
+</f:section>
+</html>
