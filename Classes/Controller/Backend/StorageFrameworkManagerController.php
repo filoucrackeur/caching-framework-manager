@@ -46,22 +46,6 @@ class StorageFrameworkManagerController extends AbstractController
      * @return ResponseInterface
      * @throws \TYPO3\CMS\Extbase\Mvc\Exception\InvalidExtensionNameException
      */
-    public function show(ServerRequestInterface $request): ResponseInterface
-    {
-        $view = $this->initializeStandaloneView($request, 'Backend/StorageFrameworkManager/Show.html');
-        $cacheManagerService = GeneralUtility::makeInstance(CacheManagerService::class);
-
-        return new JsonResponse([
-            'success' => true,
-            'html' => $view->render(),
-        ]);
-    }
-
-    /**
-     * @param ServerRequestInterface $request
-     * @return ResponseInterface
-     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\InvalidExtensionNameException
-     */
     public function session(ServerRequestInterface $request): ResponseInterface
     {
         $view = $this->initializeStandaloneView($request, 'Backend/StorageFrameworkManager/Backend/Session.html');
@@ -83,35 +67,15 @@ class StorageFrameworkManagerController extends AbstractController
      * @throws \TYPO3\CMS\Core\Cache\Exception\NoSuchCacheException
      * @throws \TYPO3\CMS\Extbase\Mvc\Exception\InvalidExtensionNameException
      */
-    public function core(ServerRequestInterface $request): ResponseInterface
+    public function caching(ServerRequestInterface $request): ResponseInterface
     {
-        $view = $this->initializeStandaloneView($request, 'Backend/StorageFrameworkManager/Backend/Core.html');
+        $view = $this->initializeStandaloneView($request, 'Backend/StorageFrameworkManager/Backend/Caching.html');
 
         $cacheManagerService = GeneralUtility::makeInstance(CacheManagerService::class);
 
         $view->assignMultiple([
-            'backends' => $cacheManagerService->getCacheCoreBackends(),
-        ]);
-
-        return new JsonResponse([
-            'success' => true,
-            'html' => $view->render(),
-        ]);
-    }
-
-    /**
-     * @param ServerRequestInterface $request
-     * @return ResponseInterface
-     * @throws \TYPO3\CMS\Core\Cache\Exception\NoSuchCacheException
-     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\InvalidExtensionNameException
-     */
-    public function extensions(ServerRequestInterface $request): ResponseInterface
-    {
-        $view = $this->initializeStandaloneView($request, 'Backend/StorageFrameworkManager/Backend/Extensions.html');
-        $cacheManagerService = GeneralUtility::makeInstance(CacheManagerService::class);
-
-        $view->assignMultiple([
-            'backends' => $cacheManagerService->getCacheExtensionsBackends(),
+            'coreBackends' => $cacheManagerService->getCacheCoreBackends(),
+            'extensionsBackends' => $cacheManagerService->getCacheExtensionsBackends(),
         ]);
 
         return new JsonResponse([

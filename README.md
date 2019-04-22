@@ -15,12 +15,20 @@ composer req filoucrackeur/storage-framework-manager
 
 or download from TER
 
-- [x] TYPO3 session cache configuration
+- [x] TYPO3 session storage configuration
 - [x] TYPO3 core cache configuration 
-- [x] TYPO3 extensions cache configuration
+- [x] TYPO3 extensions from community cache configuration
 
 ##### How it works
+Menu 
+![](./Documentation/Images/capture_module.png)
+-----
 
+You can overview your caching storage configuration
+![](./Documentation/Images/capture_caching.png =100x)
+-----
+You can overview your session storage configuration 
+![](./Documentation/Images/capture_session.png)
 
 
 ##### 

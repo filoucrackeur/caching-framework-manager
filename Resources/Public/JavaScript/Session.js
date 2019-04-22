@@ -2,7 +2,6 @@ define([
    'jquery',
    'TYPO3/CMS/StorageFrameworkManager/Router',
    'TYPO3/CMS/Backend/Notification',
-   // 'bootstrap'
 ], function($, Router, Notification) {
    'use strict';
 
@@ -24,7 +23,7 @@ define([
                if (data.success === true) {
                   modalContent.empty().append(data.html);
                } else {
-                  Notification.error('Erreur de chargement de ajax');
+                  Notification.error('Ajax loading failed');
                }
             },
             error: function(xhr) {

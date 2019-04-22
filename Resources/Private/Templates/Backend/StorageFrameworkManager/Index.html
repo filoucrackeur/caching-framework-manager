@@ -11,7 +11,7 @@
 <f:section name="content">
     <div class="card-container">
         <div class="card card-size-fixed-small">
-            <f:render partial="Card/Header" arguments="{ title: 'Session storage framework', subtitle: 'Configuration FE,BE', icon: 'Icons/tx-storage-framework-manager-session.svg'}" />
+            <f:render partial="Card/Header" arguments="{ title: 'Session storage framework', subtitle: 'sessions', icon: 'Icons/tx-storage-framework-manager-session.svg'}" />
             <div class="card-content">
                 <p class="card-text">TYPO3 comes with the option to choose between different storages for both frontend end backend user sessions (called session backends).</p>
             </div>
@@ -23,23 +23,19 @@
         </div>
 
         <div class="card card-size-fixed-small">
-            <f:render partial="Card/Header" arguments="{ title: 'Caching framework', subtitle: 'Configuration core and extensions', icon: 'Icons/tx-storage-framework-manager-core.svg'}" />
+            <f:render partial="Card/Header" arguments="{ title: 'Caching framework', subtitle: 'caching', icon: 'Icons/tx-storage-framework-manager-core.svg'}" />
             <div class="card-content">
                 <p class="card-text">The caching framework exists to help speeding up TYPO3 sites, especially heavily loaded ones. It is possible to move all caches to a dedicated cache server with specialized cache systems like the Redis key-value store (a so called NoSQL database).</p>
             </div>
             <div class="card-footer">
-                <a href="#" class="btn btn-default" data-require="TYPO3/CMS/StorageFrameworkManager/Core">
-                    <f:translate key="check_configuration">Check core</f:translate>
-                </a>
-                <a href="#" class="btn btn-default pull-right" data-require="TYPO3/CMS/StorageFrameworkManager/Extensions">
-                    <f:translate key="check_configuration">Check extensions</f:translate>
+                <a href="#" class="btn btn-default" data-require="TYPO3/CMS/StorageFrameworkManager/Caching">
+                    <f:translate key="check_configuration">Check configuration</f:translate>
                 </a>
             </div>
         </div>
     </div>
 
-    <f:be.infobox title="About TYPO3 Session Storage Framework" message="Official documentation here <a href='https://docs.typo3.org/typo3cms/CoreApiReference/stable/ApiOverview/SessionStorageFramework/Index.html'>https://docs.typo3.org/typo3cms/CoreApiReference/stable/ApiOverview/SessionStorageFramework/Index.html</a>" state="-1"/>
-    <f:be.infobox title="About TYPO3 Caching Framework" message="Official documentation here <a href='https://docs.typo3.org/typo3cms/CoreApiReference/stable/ApiOverview/CachingFramework/Index.html'>https://docs.typo3.org/typo3cms/CoreApiReference/stable/ApiOverview/CachingFramework/Index.html</a>" state="-1"/>
+    <f:be.infobox title="Official documentation" message="About <a href='https://docs.typo3.org/typo3cms/CoreApiReference/stable/ApiOverview/SessionStorageFramework/Index.html'>TYPO3 Session Storage Framework</a><br/>About <a href='https://docs.typo3.org/typo3cms/CoreApiReference/stable/ApiOverview/CachingFramework/Index.html'>TYPO3 Caching Framework</a>" state="-1"/>
 
 </f:section>
 </html>

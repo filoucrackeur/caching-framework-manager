@@ -1,33 +1,28 @@
 <?php
-$EM_CONF[$_EXTKEY] = [
-    'title' => 'Storage framework manager',
-    'description' => 'Storage framework manager extension for TYPO3',
-    'category' => 'be',
-    'shy' => 0,
-    'dependencies' => '',
-    'conflicts' => '',
-    'priority' => '',
-    'loadOrder' => '',
-    'module' => '',
-    'state' => 'stable',
-    'internal' => 0,
-    'createDirs' => '',
-    'modify_tables' => '',
-    'clearCacheOnLoad' => 1,
-    'lockType' => '',
-    'author' => 'Philippe Court',
-    'author_email' => 'contact@webstationservice.fr',
-    'author_company' => 'Web Station Service',
-    'CGLcompliance' => '',
-    'CGLcompliance_note' => '',
-    'version' => '1.0.0',
-    '_md5_values_when_last_written' => '',
-    'constraints' => [
-        'depends' => [
-            'php' => '7.0.99-7.3.999',
-            'typo3' => '8.1.99-9.9.99',
-        ],
-        'conflicts' => [],
-        'suggests' => [],
-    ],
-];
+$EM_CONF[$_EXTKEY] = array (
+  'title' => 'Storage framework manager',
+  'description' => 'Storage framework manager extension for TYPO3',
+  'category' => 'module',
+  'state' => 'stable',
+  'createDirs' => '',
+  'clearCacheOnLoad' => 1,
+  'author' => 'Philippe Court',
+  'author_email' => 'contact@webstationservice.fr',
+  'author_company' => 'Web Station Service',
+  'version' => '1.0.0',
+  '_md5_values_when_last_written' => '',
+  'constraints' => 
+  array (
+    'depends' => 
+    array (
+      'php' => '7.2.99-7.3.99',
+      'typo3' => '9.5.99-9.9.99',
+    ),
+    'conflicts' => 
+    array (
+    ),
+    'suggests' => 
+    array (
+    ),
+  ),
+);

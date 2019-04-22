@@ -4,7 +4,7 @@ if (!defined('TYPO3_MODE')) {
     die('Access denied.');
 }
 
-$boot = function ($_EXTKEY) {
+(function () {
     $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
         \TYPO3\CMS\Core\Imaging\IconRegistry::class
     );
@@ -36,7 +36,4 @@ $boot = function ($_EXTKEY) {
         );
     }
 
-};
-
-$boot($_EXTKEY);
-unset($boot);
+})($_EXTKEY);

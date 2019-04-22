@@ -1,14 +1,14 @@
 <?php
 defined('TYPO3_MODE') or die();
 
-if (TYPO3_MODE === 'BE') {
+(function () {
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
         'Filoucrackeur.storage_framework_manager',
         'tools',
         'tx_storageframeworkmanager',
         '',
         [
-            'Backend\StorageFrameworkManager' => 'index,show',
+            'Backend\StorageFrameworkManager' => 'index',
         ],
         [
             'access' => 'admin',
@@ -16,4 +16,4 @@ if (TYPO3_MODE === 'BE') {
             'labels' => 'LLL:EXT:storage_framework_manager/Resources/Private/Language/locallang_mod.xlf',
         ]
     );
-}
+})();
