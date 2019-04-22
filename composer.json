@@ -1,83 +1,82 @@
 {
-	"name": "filoucrackeur/storage-framework-manager",
-	"description": "TYPO3 caching framework manager extension",
-	"type": "typo3-cms-extension",
-	"license": "GPL-3.0+",
-	"version": "0.0.1",
-	"homepage": "https://github.com/filoucrackeur/storage-framework-manager",
-	"support": {
-		"issues": "https://github.com/filoucrackeur/storage-framework-manager/issues"
-	},
-	"keywords": [
-		"storage",
-		"session",
-		"caching",
-		"framework",
-		"manager",
-		"redis",
-		"memcached",
-		"apc",
-		"pdo",
-		"transient memory",
-		"apcu",
-		"cache"
-	],
-	"authors": [
-		{
-			"name": "Philippe Court",
-			"email": "contact@webstationservice.fr",
-			"role": "Developer",
-			"homepage": "https://github.com/filoucrackeur/"
-		}
-	],
-	"require": {
-		"php": ">=7.0",
-		"typo3/cms-core": ">=9.5,<10",
-		"predis/predis": "^1.1"
-	},
-	"require-dev": {
-		"phpunit/phpunit": "^6.5",
-		"satooshi/php-coveralls": "^2.1",
-		"nimut/testing-framework": "^4.1",
-		"namelesscoder/typo3-repository-client": "2.*",
-		"helmich/typo3-typoscript-lint": "^2.0",
-		"typo3/fluid-schema-generator": "^2.1"
-	},
-	"replace": {
-		"filoucrackeur/storage-framework-manager": "self.version",
-		"typo3-ter/storage-framework-manager": "self.version"
-	},
-	"autoload": {
-		"psr-4": {
-			"Filoucrackeur\\StorageFrameworkManager\\": "Classes/"
-		}
-	},
-	"autoload-dev": {
-		"psr-4": {
-			"Filoucrackeur\\StorageFrameworkManager\\Tests\\": "Tests",
-			"TYPO3\\Components\\TestingFramework\\": ".Build/vendor/typo3/cms/components/testing_framework/Classes/",
-			"TYPO3\\CMS\\Core\\Tests\\": ".Build/vendor/typo3/cms/typo3/sysext/core/Tests/",
-			"TYPO3\\CMS\\Fluid\\Tests\\": ".Build/vendor/typo3/cms/typo3/sysext/fluid/Tests/"
-		}
-	},
-	"config": {
-		"vendor-dir": ".Build/vendor",
-		"bin-dir": ".Build/bin",
-		"version": "0.0.1"
-	},
-	"scripts": {
-		"post-autoload-dump": [
-			"TYPO3\\TestingFramework\\Composer\\ExtensionTestEnvironment::prepare"
-		]
-	},
-	"extra": {
-		"branch-alias": {
-			"dev-master": "0.x-dev"
-		},
-		"typo3/cms": {
-			"cms-package-dir": "{$vendor-dir}/typo3/cms",
-			"web-dir": ".Build/Web",
-			"extension-key": "storage_framework_manager"
-		}
-	}
+    "name": "filoucrackeur/storage-framework-manager",
+    "description": "TYPO3 caching framework manager extension",
+    "type": "typo3-cms-extension",
+    "license": "GPL-3.0+",
+    "version": "1.0.0",
+    "homepage": "https://github.com/filoucrackeur/storage-framework-manager",
+    "support": {
+        "issues": "https://github.com/filoucrackeur/storage-framework-manager/issues"
+    },
+    "keywords": [
+        "storage",
+        "session",
+        "caching",
+        "framework",
+        "manager",
+        "redis",
+        "memcached",
+        "apc",
+        "pdo",
+        "transient memory",
+        "apcu",
+        "cache"
+    ],
+    "authors": [
+        {
+            "name": "Philippe Court",
+            "email": "contact@webstationservice.fr",
+            "role": "Developer",
+            "homepage": "https://github.com/filoucrackeur/"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "typo3/cms-core": ">=9.5,<10",
+        "predis/predis": "^1.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.5",
+        "satooshi/php-coveralls": "^2.1",
+        "nimut/testing-framework": "^4.1",
+        "namelesscoder/typo3-repository-client": "2.*",
+        "helmich/typo3-typoscript-lint": "^2.0",
+        "typo3/fluid-schema-generator": "^2.1"
+    },
+    "replace": {
+        "filoucrackeur/storage-framework-manager": "self.version",
+        "typo3-ter/storage-framework-manager": "self.version"
+    },
+    "autoload": {
+        "psr-4": {
+            "Filoucrackeur\\StorageFrameworkManager\\": "Classes/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Filoucrackeur\\StorageFrameworkManager\\Tests\\": "Tests",
+            "TYPO3\\Components\\TestingFramework\\": ".Build/vendor/typo3/cms/components/testing_framework/Classes/",
+            "TYPO3\\CMS\\Core\\Tests\\": ".Build/vendor/typo3/cms/typo3/sysext/core/Tests/",
+            "TYPO3\\CMS\\Fluid\\Tests\\": ".Build/vendor/typo3/cms/typo3/sysext/fluid/Tests/"
+        }
+    },
+    "config": {
+        "vendor-dir": ".Build/vendor",
+        "bin-dir": ".Build/bin"
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "TYPO3\\TestingFramework\\Composer\\ExtensionTestEnvironment::prepare"
+        ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.x-dev"
+        },
+        "typo3/cms": {
+            "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "web-dir": ".Build/Web",
+            "extension-key": "storage_framework_manager"
+        }
+    }
 }

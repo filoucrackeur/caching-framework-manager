@@ -1,5 +1,4 @@
 <?php
-
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Storage framework manager',
     'description' => 'Storage framework manager extension for TYPO3',
@@ -21,7 +20,7 @@ $EM_CONF[$_EXTKEY] = [
     'author_company' => 'Web Station Service',
     'CGLcompliance' => '',
     'CGLcompliance_note' => '',
-    'version' => '0.0.1',
+    'version' => '1.0.0',
     '_md5_values_when_last_written' => '',
     'constraints' => [
         'depends' => [

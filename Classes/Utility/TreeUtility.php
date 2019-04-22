@@ -21,7 +21,7 @@ class TreeUtility
             }
 
             if (is_array($value)) {
-                $output .= '<li>' . $key . ' ' . self::fromArray($value) . '</code></li>';
+                $output .= '<ul><li>' . $key . ' ' . self::fromArray($value) . '</code></li></ul>';
             } else {
                 $output .= '<li>' . $key . ' = <code>' . $value . '</code></li>';
             }
