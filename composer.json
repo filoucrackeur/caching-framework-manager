@@ -3,7 +3,7 @@
     "description": "TYPO3 caching framework manager extension",
     "type": "typo3-cms-extension",
     "license": "GPL-3.0+",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "homepage": "https://github.com/filoucrackeur/storage-framework-manager",
     "support": {
         "issues": "https://github.com/filoucrackeur/storage-framework-manager/issues"

@@ -21,14 +21,14 @@
     <div class="panel {f:if(condition: '{configuration.backend} == \'TYPO3\CMS\Core\Cache\Backend\NullBackend\'', then: 'panel-warning', else: 'panel-success')}">
         <div class="panel-heading" id="heading-backend" role="tab">
             <h3 class="panel-title">
-                <a aria-controls="collapse-backend-{identifier}"
+                <a aria-controls="collapse-backend-{backend}"
                    aria-expanded="false"
                    class="collapsed backend-item"
                    data-backend-identifier="{identifier}"
                    data-backend-type="{type}"
                    data-parent="#accordion"
                    data-toggle="collapse"
-                   href="#collapse-backend-{identifier}"
+                   href="#collapse-backend-{backend}"
                    role="button">
                     <span class="caret"></span>
 
@@ -39,7 +39,7 @@
         <div aria-expanded="false"
              aria-labelledby="heading-backend"
              class="panel-collapse search-item collapse"
-             id="collapse-backend-{identifier}"
+             id="collapse-backend-{backend}"
              role="tabpanel"
              style="height: 0px;">
             <div class="panel-body">
